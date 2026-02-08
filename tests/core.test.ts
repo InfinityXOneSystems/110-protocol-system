@@ -4,7 +4,7 @@ import { EnhancementLevel, Priority } from '../src/types';
 
 test('EnhancementTracker - createEnhancement', async (t) => {
   const tracker = new EnhancementTracker();
-  
+
   const enhancement = tracker.createEnhancement(
     'Test enhancement',
     EnhancementLevel.ENHANCED,
@@ -20,7 +20,7 @@ test('EnhancementTracker - createEnhancement', async (t) => {
 
 test('EnhancementTracker - getEnhancements', async (t) => {
   const tracker = new EnhancementTracker();
-  
+
   tracker.createEnhancement('Enhancement 1', EnhancementLevel.ENHANCED, Priority.HIGH);
   tracker.createEnhancement('Enhancement 2', EnhancementLevel.EXCEPTIONAL, Priority.MEDIUM);
 
@@ -30,7 +30,7 @@ test('EnhancementTracker - getEnhancements', async (t) => {
 
 test('EnhancementTracker - getEnhancementsByPriority', async (t) => {
   const tracker = new EnhancementTracker();
-  
+
   tracker.createEnhancement('High 1', EnhancementLevel.ENHANCED, Priority.HIGH);
   tracker.createEnhancement('Medium 1', EnhancementLevel.ENHANCED, Priority.MEDIUM);
   tracker.createEnhancement('High 2', EnhancementLevel.ENHANCED, Priority.HIGH);
@@ -41,7 +41,7 @@ test('EnhancementTracker - getEnhancementsByPriority', async (t) => {
 
 test('EnhancementTracker - getEnhancementsByImpact', async (t) => {
   const tracker = new EnhancementTracker();
-  
+
   tracker.createEnhancement('Enhanced', EnhancementLevel.ENHANCED, Priority.HIGH);
   tracker.createEnhancement('Exceptional', EnhancementLevel.EXCEPTIONAL, Priority.HIGH);
   tracker.createEnhancement('Transformative', EnhancementLevel.TRANSFORMATIVE, Priority.HIGH);
@@ -52,7 +52,7 @@ test('EnhancementTracker - getEnhancementsByImpact', async (t) => {
 
 test('EnhancementTracker - getAverageEnhancementLevel', async (t) => {
   const tracker = new EnhancementTracker();
-  
+
   tracker.createEnhancement('Enhanced', EnhancementLevel.ENHANCED, Priority.HIGH);
   tracker.createEnhancement('Exceptional', EnhancementLevel.EXCEPTIONAL, Priority.HIGH);
 
@@ -62,7 +62,7 @@ test('EnhancementTracker - getAverageEnhancementLevel', async (t) => {
 
 test('RecommendationEngine - createRecommendation', async (t) => {
   const engine = new RecommendationEngine();
-  
+
   const recommendation = engine.createRecommendation(
     'Test Recommendation',
     'This is a test',
@@ -81,7 +81,7 @@ test('RecommendationEngine - createRecommendation', async (t) => {
 
 test('RecommendationEngine - getRecommendationsByPriority', async (t) => {
   const engine = new RecommendationEngine();
-  
+
   engine.createRecommendation('High 1', 'Test', Priority.HIGH, 80, 'test');
   engine.createRecommendation('Medium 1', 'Test', Priority.MEDIUM, 60, 'test');
   engine.createRecommendation('High 2', 'Test', Priority.HIGH, 90, 'test');
@@ -92,7 +92,7 @@ test('RecommendationEngine - getRecommendationsByPriority', async (t) => {
 
 test('RecommendationEngine - getTopRecommendations', async (t) => {
   const engine = new RecommendationEngine();
-  
+
   engine.createRecommendation('Low Impact', 'Test', Priority.LOW, 30, 'test');
   engine.createRecommendation('High Impact', 'Test', Priority.HIGH, 95, 'test');
   engine.createRecommendation('Medium Impact', 'Test', Priority.MEDIUM, 60, 'test');
@@ -105,7 +105,7 @@ test('RecommendationEngine - getTopRecommendations', async (t) => {
 
 test('RecommendationEngine - getActionableRecommendations', async (t) => {
   const engine = new RecommendationEngine();
-  
+
   engine.createRecommendation('Actionable', 'Test', Priority.HIGH, 80, 'test', true);
   engine.createRecommendation('Not Actionable', 'Test', Priority.HIGH, 80, 'test', false);
 

@@ -37,6 +37,7 @@ export class ProtocolApiController {
   /**
    * Health check endpoint
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   async healthCheck(): Promise<ApiResponse<HealthCheck>> {
     try {
       const health = this.protocol.getHealthCheck();
@@ -57,6 +58,7 @@ export class ProtocolApiController {
   /**
    * Get system metrics endpoint
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   async getMetrics(): Promise<ApiResponse<SystemMetrics>> {
     try {
       const metrics = this.protocol.getMetrics();
@@ -77,6 +79,7 @@ export class ProtocolApiController {
   /**
    * Get enhancements endpoint
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   async getEnhancements(): Promise<ApiResponse> {
     try {
       const enhancements = this.protocol.getEnhancements();
@@ -97,6 +100,7 @@ export class ProtocolApiController {
   /**
    * Get recommendations endpoint
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   async getRecommendations(limit?: number): Promise<ApiResponse> {
     try {
       const recommendations = limit
@@ -121,6 +125,7 @@ export class ProtocolApiController {
    */
   async executeOperation(request: ApiRequest): Promise<ApiResponse<OperationResult>> {
     try {
+      // eslint-disable-next-line @typescript-eslint/require-await
       const result = await this.protocol.execute(async () => {
         // Execute the requested operation
         return { operation: request.operation, params: request.params };
@@ -143,6 +148,7 @@ export class ProtocolApiController {
   /**
    * Get configuration endpoint
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   async getConfig(): Promise<ApiResponse> {
     try {
       const config = this.protocol.getConfig();

@@ -101,9 +101,9 @@ export class Protocol110System {
       this.metrics.failedOperations++;
       this.updateMetrics();
 
-      this.logger.error(`Operation failed: ${operationName}`, { 
+      this.logger.error(`Operation failed: ${operationName}`, {
         error,
-        executionTime: Date.now() - startTime 
+        executionTime: Date.now() - startTime,
       });
 
       // Attempt self-healing if enabled
@@ -121,7 +121,10 @@ export class Protocol110System {
   /**
    * Applies enhancements to the operation result
    */
-  private applyEnhancements(operationName: string, result: unknown): import('./types').Enhancement[] {
+  private applyEnhancements(
+    operationName: string,
+    result: unknown
+  ): import('./types').Enhancement[] {
     if (!this.config.enableContinuousImprovement) {
       return [];
     }
@@ -154,7 +157,10 @@ export class Protocol110System {
   /**
    * Generates recommendations for improvement
    */
-  private generateRecommendations(operationName: string, _result: unknown): import('./types').Recommendation[] {
+  private generateRecommendations(
+    operationName: string,
+    _result: unknown
+  ): import('./types').Recommendation[] {
     if (!this.config.enableContinuousImprovement) {
       return [];
     }
@@ -189,6 +195,7 @@ export class Protocol110System {
   /**
    * Attempts self-healing when an error occurs
    */
+  // eslint-disable-next-line @typescript-eslint/require-await
   private async attemptSelfHealing(
     error: unknown,
     operationName: string

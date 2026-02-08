@@ -6,7 +6,11 @@ export { Protocol110System } from './protocol';
 export { ProtocolApiController } from './api';
 export { SelfHealingSystem } from './self-healing';
 export { SelfLearningSystem } from './self-learning';
-export { IntegrationManager, HttpIntegrationAdapter, WebSocketIntegrationAdapter } from './integrations';
+export {
+  IntegrationManager,
+  HttpIntegrationAdapter,
+  WebSocketIntegrationAdapter,
+} from './integrations';
 export { EnhancementTracker, RecommendationEngine } from './core';
 export { Logger } from './logger';
 

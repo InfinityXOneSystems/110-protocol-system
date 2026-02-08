@@ -48,6 +48,7 @@ export class HttpIntegrationAdapter extends BaseIntegrationAdapter {
     this.endpoint = endpoint;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async connect(): Promise<boolean> {
     // Implement HTTP connection logic
     // Validates endpoint: this.endpoint
@@ -55,11 +56,13 @@ export class HttpIntegrationAdapter extends BaseIntegrationAdapter {
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async disconnect(): Promise<boolean> {
     this.connected = false;
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async send(_data: unknown): Promise<boolean> {
     if (!this.connected) {
       throw new Error('Not connected');
@@ -69,6 +72,7 @@ export class HttpIntegrationAdapter extends BaseIntegrationAdapter {
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async receive(): Promise<unknown> {
     if (!this.connected) {
       throw new Error('Not connected');
@@ -91,6 +95,7 @@ export class WebSocketIntegrationAdapter extends BaseIntegrationAdapter {
     this.url = url;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async connect(): Promise<boolean> {
     // Implement WebSocket connection logic using this.url
     // In production: new WebSocket(this.url)
@@ -98,11 +103,13 @@ export class WebSocketIntegrationAdapter extends BaseIntegrationAdapter {
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async disconnect(): Promise<boolean> {
     this.connected = false;
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async send(_data: unknown): Promise<boolean> {
     if (!this.connected) {
       throw new Error('Not connected');
@@ -112,6 +119,7 @@ export class WebSocketIntegrationAdapter extends BaseIntegrationAdapter {
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async receive(): Promise<unknown> {
     if (!this.connected) {
       throw new Error('Not connected');
